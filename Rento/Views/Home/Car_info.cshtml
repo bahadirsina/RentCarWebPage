@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "Car_Info";
+}
+
+@model Rento.Models.Car
+
+<link rel="stylesheet" href="~/Content/Car_Info_Style.css">
+<link href="https://fonts.cdnfonts.com/css/righteous" rel="stylesheet">
+<img class="img_car" src="~/Images/Cars/@Html.Raw(Model.CImage)" />
+<table class="information_car">
+    <tr>
+        <td><p style="font-size: 22px; color: brown">Maker: </p></td>
+        <td><p style="font-size: 22px; color: black"> @Model.Maker</p></td>
+    </tr>
+    <tr>
+        <td><p style="font-size: 22px; color: brown ">Model: </p></td>
+        <td><p style="font-size: 22px; color: black"> @Model.Model</p></td>
+    </tr>
+    <tr>
+        <td><p style="font-size: 22px; color: brown ">Year: </p></td>
+        <td><p style="font-size: 22px; color: black"> @Model.Year</p></td>
+    </tr>
+    <tr>
+        <td><p style="font-size: 22px; color: brown ">Type: </p></td>
+        <td><p style="font-size: 22px; color: black"> @Model.CType </p></td>
+    </tr>
+    <tr>
+        <td><p style="font-size: 22px; color: brown ">Price: </p></td>
+        <td><p style="font-size: 22px; color: black"> $@Model.Price per day</p></td>
+    </tr>
+    <tr>
+        <td><p style="font-size: 22px; color: brown ">Reserved:</p></td>
+        <td>
+            @if (Model.CAvailable == true)
+            {
+                <p style="font-size: 22px; color: green">No, Reserve It Now</p>
+            }
+            else
+            {
+                <p style="font-size: 22px; color: red">Yes, Please Try Again Later</p>
+            }
+        </td>
+    </tr>
+</table>
+<br />
+@if (Model.CAvailable == true)
+{
+    <div class="sign_btn">
+        <a href="#">Reservation</a>
+    </div>
+}
+<div class="backto">
+    @Html.ActionLink("Back to List", "Car_List", "Home", "", new { @class = "btn1" })
+    @Html.ActionLink("Back to Home", "Index", "Home", "", new { @class = "btn2" })
+</div>
+

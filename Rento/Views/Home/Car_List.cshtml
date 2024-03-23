@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Car_List";
+}
+
+@model IEnumerable<Rento.Models.Car>
+
+<link rel="stylesheet" href="~/Content/Car_List_Style.css">
+<link href="https://fonts.cdnfonts.com/css/righteous" rel="stylesheet">
+<h1 class="ourFleet">Explore Our Fleet</h1>
+<table class="table">
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            <div class="car_maker_model">
+                @Html.DisplayFor(modelItem => item.Maker)
+                @Html.DisplayFor(modelItem => item.Model)
+            </div>
+            <div class="car_year">
+                @Html.DisplayFor(modelItem => item.Year)
+                <br />
+            </div>
+            <div class="car_availabilitiy">
+                @if (item.CAvailable == false)
+                {
+                    <span class="car_unavailable"> @Html.Raw("Car is not Available")</span>
+                }
+                else
+                {
+                    <span class="car_available"> @Html.Raw("Car is Available")</span>
+
+                }
+            </div>
+        </td>
+        <td>
+            <img src="~/Images/Cars/@item.CImage" />
+        </td>
+        <td>
+            <div class="sign_btn">
+                <a href="@Url.Action("Car_info","Home", new { id=item.ID })">Car Information</a>
+            </div>
+        </td>
+    </tr>
+    }
+
+</table>
+
+

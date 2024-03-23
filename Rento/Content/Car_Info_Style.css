@@ -1,0 +1,31 @@
+﻿.img_car {
+    width: 100%;
+}
+.information_car {
+    width: auto; 
+    table-layout: auto; 
+    border-collapse: collapse;
+    margin-left: 10px;
+    border-spacing: 50px;
+    font-size: 50px;
+    font-family: 'Righteous', sans-serif;
+}
+td, th {
+    padding: 5px;
+    border: 1px ;
+    margin-right: 5px;
+}
+.backto {
+    margin-top: 20px;
+}
+.btn1 {
+    font-size: 20px;
+    font-weight: bold;
+    color: blue;
+}
+.btn2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 20px;
+    color: blue;
+}

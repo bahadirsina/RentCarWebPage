@@ -1,0 +1,27 @@
+﻿.ourFleet{
+    color: blue;
+}
+.car_maker_model {
+    color: black;
+    font-size: 25px;
+    font-family: 'Righteous', sans-serif;
+}
+table td img{
+    height:120px;
+    width:170px;
+}
+.car_year {
+    font-size: 20px;
+    font-family: 'Righteous', sans-serif;
+    color: #FFCD47;
+}
+.car_available {
+    font-size: 18px;
+    font-family: 'Righteous', sans-serif;
+    color: green;
+}
+.car_unavailable {
+    font-size: 18px;
+    font-family: 'Righteous', sans-serif;
+    color: red;
+}
